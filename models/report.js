@@ -1,10 +1,6 @@
 const mongoose=require('mongoose');   
 //Reports Schema      
 const reportSchema=new mongoose.Schema({
-    status:{                                   
-        type:String,
-        required:true,
-    },
     doctor:{                                  
         type:mongoose.Schema.Types.ObjectId,
         ref:'Doctor',
@@ -14,6 +10,10 @@ const reportSchema=new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Patient',
         required:true
+    },
+    status:{                                   
+        type:String,
+        required:true,
     }
 },
 {

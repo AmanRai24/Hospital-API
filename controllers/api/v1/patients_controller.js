@@ -6,7 +6,7 @@ const Status = require('../../../config/status');
 //Register a patient using name,phone and password
 module.exports.register = async function(req, res){
 
-    if(req.body.phone==undefined || req.body.name==undefined || req.body.password==undefined){
+    if(req.body.phone==undefined || req.body.name==undefined){
         return res.status(206).json({
             message: 'Incomplete data provided'
         });
@@ -92,7 +92,7 @@ module.exports.createReport = async function(req, res){
         }
         else{
             return res.status(401).json({
-                message: 'Patient/Doctor Not Registered'
+                message: 'Patient/Doctor is not Registered'
             });
         }
     }
@@ -111,15 +111,16 @@ module.exports.allReports = async function(req, res){
         let report=await Report.find({ patient:req.params.id }).sort("createdAt").populate('doctor').populate('patient');
   
         return res.status(200).json({
-          message:'All reports of the patient',
-          details:report
+            data:{
+                report
+            },
+            message:'All reports of the patient',
+          //details:report
         })
       }
       catch(err){
-        if(err){
-          
           return res.status(500).json({
           message:'OOPS!! Error Occured!'
-        })}
+        })
       }
     };

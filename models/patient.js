@@ -10,10 +10,10 @@ const patientSchema=new mongoose.Schema({
         required:true,
         unique:true
     },
-    password:{                                  
-        type:String,
-        required:true
-    },
+    // password:{                                  
+    //     type:String,
+    //     required:true
+    // },
     reports:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'report',
