@@ -16,9 +16,12 @@ module.exports.register = async function(req, res){
     let doctorExists = await Doctor.findOne({email: Email});
     if(doctorExists){
         doctorExists = await doctorExists.toObject();
+        
+        delete doctorExists.password;
         return res.status(405).json({
             data:{
                 doctor: doctorExists
+                
             },
             message: 'Doctor already registered'
         });
@@ -28,6 +31,7 @@ module.exports.register = async function(req, res){
         let createdDoctor = await (await Doctor.create(req.body)).toObject();
         
         if(createdDoctor){
+            delete createdDoctor.password;
             return res.status(200).json({
                 data: {
                     doctor:createdDoctor

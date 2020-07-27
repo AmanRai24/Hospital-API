@@ -4,11 +4,27 @@ const port = 8000;
 
 const db = require('./config/mongoose');
 
+const bodyParser = require("body-parser");
+const config = require("config");
+const morgan = require("morgan");
+
+//require passport and JWT Strategy for auth
 const passport = require('passport');
 //use of JWT token
 const passportJWT=require('./config/passport-jwt-strategy');
 
-app.use(express.urlencoded({extended:true}));
+//do not show the log for test
+if (config.util.getEnv("NODE_ENV") !== "test") {
+    //use of morgan library for command line
+    app.use(morgan("combined"));
+  }
+
+//app.use(express.urlencoded({extended:true}));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type:"application/json" }));
 
 app.use(passport.initialize());
 //use express router
@@ -21,3 +37,5 @@ app.listen(port, function(err){
     }
     console.log(`Server is running on port: ${port}`);
 });
+
+module.exports = app;

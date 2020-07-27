@@ -78,6 +78,7 @@ module.exports.createReport = async function(req, res){
                 await patient.reports.push(report);
                 await patient.save();
             }
+           
             return res.status(200).json({
                 data:{
                     report:{
@@ -105,14 +106,13 @@ module.exports.createReport = async function(req, res){
 
 //fetchall reports of a patient 
 module.exports.allReports = async function(req, res){
-   
-
+    
     try{
         let report=await Report.find({ patient:req.params.id }).sort("createdAt").populate('doctor').populate('patient');
-  
+        
         return res.status(200).json({
             data:{
-                report
+                    report
             },
             message:'All reports of the patient',
           //details:report
