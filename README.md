@@ -46,7 +46,7 @@ URL: ` http://localhost:8000/api/v1`
 
 ![](/Images/4.JPG)
 
-3. `/patients/register`(POST): Doctor can Register the patient using name,phone number(used as id further) and password.
+3. `/patients/register`(POST): Doctor can Register the patient using name and Phone Number.
 
 #### Need for further use:
 
@@ -84,10 +84,21 @@ URL: ` http://localhost:8000/api/v1`
 
 - OUTPUT 
 
-
 ![](/Images/12.JPG)
 
-6. `Happy Learning`
+## Unit Tesing 
+
+1. Run following command: `npm test` for unit-tesing.
+ 
+- Used `mocha` as a server and `chai` for assertion library.
+
+1.Testing for `/patients/register`
+2.Testing for `/patients/:id/create_report`
+3.Testing for `/patients/:id/all_reports`
+
+- Output:(On the console)
+
+![](/Images/13.JPG)
 
 ## Folder Structure
 - **Entry point** : index.js.
@@ -95,6 +106,7 @@ URL: ` http://localhost:8000/api/v1`
 - **controllers** : The controllers for various urls like Doctor API or Patient API or Report API.
 - **models** : Mongoose Schemas for the Doctors, Patients and reports.
 - **routes** : Different routes for different request urls.
+- **test** : Test files for testing different routes.
 
 
 
