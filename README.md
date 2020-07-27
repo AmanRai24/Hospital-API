@@ -50,42 +50,42 @@ URL: ` http://localhost:8000/api/v1`
 
 #### Need for further use:
 
-![](/Images/6.JPG)
+![](/Images/5.JPG)
 
 - INPUT:
 
-![](/Images/5.JPG)
+![](/Images/6.JPG)
 
 - OUTPUT
 
-![](/Images/11.JPG)
+![](/Images/7.JPG)
 
 4. `/patients/:id/create_report`(POST): Doctor can create report of the Patients.
 
 #### Need for further use:
 
-![](/Images/6.JPG)
+![](/Images/8.JPG)
 
 - INPUT:send status([0:Negative, 1:Travelled-Quarantine, 2:Symptoms-Quarantine, 3:Positive-Admit]) and doctor id 
 
-![](/Images/7.JPG)
+![](/Images/9.JPG)
 
 - OUTPUT
 
-![](/Images/8.JPG)
+![](/Images/10.JPG)
 
 5. `/patients/:id/all_reports`(GET):Retrive all reports of a patient by ID.
 
 - OUTPUT
 
-![](/Images/9.JPG)
+![](/Images/11.JPG)
 
 5. `/reports/:status`(GET):Retrieve all reports from DB filter on the basis of Status sent in params.
 
 - OUTPUT 
 
 
-![](/Images/10.JPG)
+![](/Images/12.JPG)
 
 6. `Happy Learning`
 
