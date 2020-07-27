@@ -4,15 +4,24 @@
   "description": "Doctor-Patient Registration Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "SET NODE_ENV=dev && nodemon index.js",
+    "test": "mocha --timeout 10000"
   },
   "author": "Aman Rai",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.23",
+    "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.0.1"
   }
 }

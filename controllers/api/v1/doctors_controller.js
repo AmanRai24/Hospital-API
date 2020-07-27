@@ -20,7 +20,7 @@ module.exports.register = async function(req, res){
             data:{
                 doctor: doctorExists
             },
-            message: 'Doc already registered'
+            message: 'Doctor already registered'
         });
     }
             
