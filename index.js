@@ -5,7 +5,10 @@ const port = 8000;
 const db = require('./config/mongoose');
 
 const bodyParser = require("body-parser");
+
+//we load the db location from the JSON files
 const config = require("config");
+
 const morgan = require("morgan");
 
 //require passport and JWT Strategy for auth
@@ -19,8 +22,8 @@ if (config.util.getEnv("NODE_ENV") !== "test") {
     app.use(morgan("combined"));
   }
 
-//app.use(express.urlencoded({extended:true}));
 
+//parse application/json and look for raw text  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -38,4 +41,4 @@ app.listen(port, function(err){
     console.log(`Server is running on port: ${port}`);
 });
 
-module.exports = app;
+module.exports = app; //for testing
