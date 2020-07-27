@@ -92,9 +92,9 @@ URL: ` http://localhost:8000/api/v1`
  
 - Used `mocha` as a server and `chai` for assertion library.
 
-1.Testing for `/patients/register`
-2.Testing for `/patients/:id/create_report`
-3.Testing for `/patients/:id/all_reports`
+1. Testing for `/patients/register`
+2. Testing for `/patients/:id/create_report`
+3. Testing for `/patients/:id/all_reports`
 
 - Output:(On the console)
 
