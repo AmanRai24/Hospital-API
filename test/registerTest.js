@@ -86,7 +86,7 @@ describe("Patients Register Testing :", () => {
     describe("POST /api/v1/patients/register", () => {
       it("Patient Successfully Registered:", (done) => {
         let patient = {
-          name: "patient13",
+          name: "patient3",
           phone: 100000003,
         };
   
@@ -100,9 +100,7 @@ describe("Patients Register Testing :", () => {
             res.should.have.status(200);
             res.body.should.be.a("object");
             res.body.should.have.property("message");
-            //res.body.should.have.property("patient");
-            res.body.Patient.should.have.property("name");
-            res.body.Patient.should.have.property("phone");
+            res.body.should.have.property("message").eql("Patient Successfully Registered");
             done();
           });
       });
