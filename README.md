@@ -27,7 +27,7 @@ There can be 2 types of Users
 URL: ` http://localhost:8000/api/v1`
 
 #### End Points:
-1. `/doctor/register`(POST): Register the new doctor using name,email and password(all requireds).
+1. `/doctors/register`(POST): Register the new doctor using name,email and password(all requireds).
 - INPUT:
 
 ![](/Images/1.JPG)
@@ -36,7 +36,7 @@ URL: ` http://localhost:8000/api/v1`
 
 ![](/Images/2.JPG)
 
-2. `/doctor/login`(POST): Doctor can Login using email and password.
+2. `/doctors/login`(POST): Doctor can Login using email and password.
 
 - INPUT:
 
