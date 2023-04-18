@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const connection = "mongodb+srv://souvikmukherjee089:Souvik12345@hospital-api-cluster.5ppzfch.mongodb.net/?retryWrites=true&w=majority";
 
+// mongoose.connect('mongodb://127.0.0.1/HospitalAPI',{useNewUrlParser: true});
+
 mongoose.connect(connection, { useNewUrlParser: true });
 
 const db = mongoose.connection;
